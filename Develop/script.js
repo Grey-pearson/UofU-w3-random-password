@@ -4,8 +4,7 @@ let password = {
   lowercase: false,
   uppercase: false,
   numerics: false,
-  special:  false,
-  password: 'string'
+  special:  false
 }
 
 function generatePassword(){
@@ -15,35 +14,40 @@ function generatePassword(){
   if ((password.length < 8) || ( password.length > 128)){
     password.length = 8
   }
+  console.log(password)
 
   // ask if include lowercase, uppercase, numeric, + special characters
   // propmt if want lowercase
   let lowercaseHold = window.prompt('do you want lowercase characters? Y or N')
-  lowercaseHold.toUpperCase()
-  if (lowercaseHold == 'Y'){
+  lowercaseHold = lowercaseHold.toUpperCase()
+  if (lowercaseHold === 'Y'){
     password.lowercase = true
   }
+  console.log(password)
 
   // propmt if want uppercase
   let uppercaseHold = window.prompt('do you want lowercase characters? Y or N')
-  uppercaseHold.toUpperCase()
-  if (uppercaseHold == 'Y'){
+  uppercaseHold = uppercaseHold.toUpperCase()
+  if (uppercaseHold === 'Y'){
     password.uppercase = true
   }
+  console.log(password)
 
   // propmt if want numeric 
   let numericHold = window.prompt('do you want lowercase characters? Y or N')
-  numericHold.toUpperCase()
-  if (numericHold == 'Y'){
+  numericHold = numericHold.toUpperCase()
+  if (numericHold === 'Y'){
     password.numerics = true
   }
+  console.log(password)
 
   // propmt if want special characters
   let specialHold = window.prompt('do you want lowercase characters? Y or N')
-  specialHold.toUpperCase()
-  if (specialHold == 'Y'){
+  specialHold = specialHold.toUpperCase()
+  if (specialHold === 'Y'){
     password.special = true
   }
+  console.log(password)
 
   let temp = []
   let randomArray = []
@@ -101,6 +105,12 @@ function generatePassword(){
   let finalPassword = randomArray.toString()
   console.log(finalPassword)
   window.alert(finalPassword)
+
+  password.lowercase = false
+  password.uppercase = false
+  password.numerics = false
+  password.special = false
+  console.log(password)
 }
 
 // Get references to the #generate element
