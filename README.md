@@ -14,3 +14,6 @@ this included:
 - letting users decide the length of the password
 - and making the min characters in a password 8 for security
 - this also logs all this information in the console so users may see their password specifications
+
+    ![screen shto of the ui for the password generator](Develop/screenshot.png)
+    link to the deplyed project: https://grey-pearson.github.io/UofU-w3-random-password/
