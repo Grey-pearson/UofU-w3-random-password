@@ -85,3 +85,8 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 console.log('testing')
+
+
+
+// check if each var is true or false, if true make a new var a random array from
+//fuck its gotta have at aleast one thing ok maybe some kind of array call or random math to generate 1 from each?????????
