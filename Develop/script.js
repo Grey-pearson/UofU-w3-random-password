@@ -15,59 +15,92 @@ function generatePassword(){
   if ((password.length < 8) || ( password.length > 128)){
     password.length = 8
   }
-  // window.alert(password.length + ' length')
-
 
   // ask if include lowercase, uppercase, numeric, + special characters
   // propmt if want lowercase
   let lowercaseHold = window.prompt('do you want lowercase characters? Y or N')
-  // window.alert(lowercaseHold + ' awnser')
   lowercaseHold.toUpperCase()
-  if (lowercaseHold = 'Y'){
+  if (lowercaseHold == 'Y'){
     password.lowercase = true
   }
-  // window.alert(password.lowercase + ' lowercase')
 
   // propmt if want uppercase
   let uppercaseHold = window.prompt('do you want lowercase characters? Y or N')
-  // window.alert(uppercaseHold + ' awnser')
   uppercaseHold.toUpperCase()
-  if (uppercaseHold = 'Y'){
+  if (uppercaseHold == 'Y'){
     password.uppercase = true
   }
-  // window.alert(password.uppercase + ' uppercase')
 
   // propmt if want numeric 
   let numericHold = window.prompt('do you want lowercase characters? Y or N')
-  // window.alert(numericHold + ' awnser')
   numericHold.toUpperCase()
-  if (numericHold = 'Y'){
+  if (numericHold == 'Y'){
     password.numerics = true
   }
 
   // propmt if want special characters
   let specialHold = window.prompt('do you want lowercase characters? Y or N')
-  // window.alert(specialHold + ' awnser')
   specialHold.toUpperCase()
-  if (specialHold = 'Y'){
+  if (specialHold == 'Y'){
     password.special = true
   }
-  // console.log(password)
 
-  // at least one of all criterea i say yes to
-  // generate password
+  let temp = []
+  let randomArray = []
 
-  // for loop with lenght as the loops, pulling from alphebet 1-9 and !?%$#, then updating password.password
-  // ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-  let lowercase = 'abcdefghijklmnopqrstuvwxyz'
-  let uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  while(randomArray.length < password.length+1){
+    let randomIndex = 0
+    let entery = []
+
+    if(randomArray.length == password.length){
+      break
+    }
+
+    if(password.lowercase == true){
+      let lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+      randomIndex = Math.floor(Math.random() * lowercase.length);
+      entery = lowercase[randomIndex]
+      randomArray.push(entery)
+    }
+
+    if(randomArray.length == password.length){
+      break
+    }
+
+    if(password.uppercase == true){
+      let uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+      randomIndex = Math.floor(Math.random() * uppercase.length);
+      entery = uppercase[randomIndex]
+      randomArray.push(entery)
+    }
+
+    if(randomArray.length == password.length){
+      break
+    }
+
+    if(password.numerics == true){
+      let numerics = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+      randomIndex = Math.floor(Math.random() * numerics.length);
+      entery = numerics[randomIndex]
+      randomArray.push(entery)
+    }
+
+    if(randomArray.length == password.length){
+      break
+    }
+
+    if(password.special == true){
+      let special = ['!', '@', '#', '$', '%', '^', '&', '*', '?']
+      randomIndex = Math.floor(Math.random() * special.length);
+      entery = special[randomIndex]
+      randomArray.push(entery)
+    }
+
   }
-// randomly pick some characters from each array ie uper lower num and special, generate random array then concat and randomize array then print as a string
 
-  // display new password in alert or to the page\
+  let finalPassword = randomArray.toString()
+  console.log(finalPassword)
+  window.alert(finalPassword)
 }
 
 // Get references to the #generate element
@@ -85,8 +118,3 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 console.log('testing')
-
-
-
-// check if each var is true or false, if true make a new var a random array from
-//fuck its gotta have at aleast one thing ok maybe some kind of array call or random math to generate 1 from each?????????
