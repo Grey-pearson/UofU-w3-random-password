@@ -26,7 +26,7 @@ function generatePassword(){
   console.log(password)
 
   // propmt if want uppercase
-  let uppercaseHold = window.prompt('do you want lowercase characters? Y or N')
+  let uppercaseHold = window.prompt('do you want uppercase characters? Y or N')
   uppercaseHold = uppercaseHold.toUpperCase()
   if (uppercaseHold === 'Y'){
     password.uppercase = true
@@ -34,7 +34,7 @@ function generatePassword(){
   console.log(password)
 
   // propmt if want numeric 
-  let numericHold = window.prompt('do you want lowercase characters? Y or N')
+  let numericHold = window.prompt('do you want numbers? Y or N')
   numericHold = numericHold.toUpperCase()
   if (numericHold === 'Y'){
     password.numerics = true
@@ -42,7 +42,7 @@ function generatePassword(){
   console.log(password)
 
   // propmt if want special characters
-  let specialHold = window.prompt('do you want lowercase characters? Y or N')
+  let specialHold = window.prompt('do you want special characters? Y or N')
   specialHold = specialHold.toUpperCase()
   if (specialHold === 'Y'){
     password.special = true
